@@ -13,4 +13,13 @@ class OrderTest {
 
         assertEquals(expected, soma(um, dois))
     }
+
+    @Test
+    fun `Deve calcular o subtotal do pedido`() {
+        val order = Order()
+        order.addItem(Item("Cigar", "Eight", 10))
+        order.addItem(Item("Beer", "Glacial", 10))
+        order.addItem(Item("Water", "Bem Barato", 10))
+        order.getSubtotal()
+    }
 }
