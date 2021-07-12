@@ -1,6 +1,7 @@
 package test
 
 import org.junit.Test
+import soma
 import kotlin.test.assertEquals
 
 class OrderTest {
