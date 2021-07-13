@@ -33,4 +33,8 @@ class Order() {
         return taxes
     }
 
+    fun getTotal(): Double {
+        return getSubtotal()+getTaxes()
+    }
+
 }
