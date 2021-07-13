@@ -1,5 +1,7 @@
 package test
 
+import Item
+import Order
 import org.junit.Test
 import soma
 import kotlin.test.assertEquals
