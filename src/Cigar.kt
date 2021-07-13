@@ -1,6 +1,5 @@
-import Item as Item1
 
-class Cigar(brand: String, price: Int) : Item1(category = "Cigar", brand = brand, price = price) {
+class Cigar(brand: String, price: Int) : TaxItem(category = "Cigar", brand = brand, price = price) {
     override val price: Int = price
 
     override fun getTax(): Double {

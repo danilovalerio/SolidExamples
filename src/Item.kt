@@ -4,9 +4,5 @@ abstract class Item(
     open val price: Int
 ) {
 
-    fun calculateTaxes(): Double {
-        return this.price * this.getTax()
-    }
 
-    abstract fun getTax(): Double
 }

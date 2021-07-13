@@ -1,10 +1,10 @@
 import Item as Item1
 
-class Beer(brand: String, price: Int) : TaxItem(category = "Beer", brand = brand, price = price) {
+class Eletronic(brand: String, price: Int) : TaxItem(category = "Eletronic", brand = brand, price = price) {
     override val price: Int = price
 
     override fun getTax(): Double {
-        return 0.1
+        return 0.5
     }
 }
 

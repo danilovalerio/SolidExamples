@@ -22,7 +22,10 @@ class Order() {
     fun getTaxes(): Double {
         var taxes = 0.0
         for (item in this.listItem) {
-            taxes += item.calculateTaxes()
+            //Se item é uma instancia de TaxItem ele terá imposto
+            if (item is TaxItem) {
+                taxes += item.calculateTaxes()
+            }
         }
         return taxes
     }
