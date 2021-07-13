@@ -1,3 +1,5 @@
+import java.util.*
+
 class Order() {
     //pedido tera codigo uma lista de itens
     lateinit var code: String
@@ -19,19 +21,19 @@ class Order() {
         return total
     }
 
-    fun getTaxes(): Double {
+    fun getTaxes(date: Date): Double {
         var taxes = 0.0
         for (item in this.listItem) {
             //Se item é uma instancia de TaxItem ele terá imposto
             if (item is TaxItem) {
-                taxes += item.calculateTaxes()
+                taxes += item.calculateTaxes(date)
             }
         }
         return taxes
     }
 
-    fun getTotal(): Double {
-        return getSubtotal() + getTaxes()
+    fun getTotal(date: Date): Double {
+        return getSubtotal() + getTaxes(date)
     }
 
 }
