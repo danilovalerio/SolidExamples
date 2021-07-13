@@ -1,7 +1,9 @@
 package test
 
-import Item
+import Beer
+import Cigar
 import Order
+import Water
 import org.junit.Test
 import soma
 import kotlin.test.assertEquals
@@ -19,9 +21,9 @@ class OrderTest {
     @Test
     fun `Deve calcular o subtotal do pedido`() {
         val order = Order()
-        order.addItem(Item("Cigar", "Eight", 8))
-        order.addItem(Item("Beer", "Glacial", 5))
-        order.addItem(Item("Water", "Bem Barato", 5))
+        order.addItem(Cigar("Eight", 8))
+        order.addItem(Beer("Glacial", 5))
+        order.addItem(Water("Bem Barato", 5))
         val subtotal = order.getSubtotal()
         val expected = 18
 
@@ -32,9 +34,9 @@ class OrderTest {
     @Test
     fun `Deve calcular os impostos do pedido`() {
         val order = Order()
-        order.addItem(Item("Cigar", "Eight", 8)) //0.2 = 1.6
-        order.addItem(Item("Beer", "Glacial", 5)) //0.1 = 0.5
-        order.addItem(Item("Water", "Bem Barato", 5)) // 0.0
+        order.addItem(Cigar("Eight",8)) //0.2 = 1.6
+        order.addItem(Beer("Glacial",5)) //0.1 = 0.5
+        order.addItem(Water("Bem Barato",5)) // 0.0
         val impostos = order.getTaxes()
         val expected = 2.1
 
@@ -45,9 +47,9 @@ class OrderTest {
     @Test
     fun `Deve calcular o total do pedido`() {
         val order = Order()
-        order.addItem(Item("Cigar", "Eight", 8)) //0.2 = 1.6
-        order.addItem(Item("Beer", "Glacial", 5)) //0.1 = 0.5
-        order.addItem(Item("Water", "Bem Barato", 5)) // 0.0
+        order.addItem(Cigar("Eight",8)) //0.2 = 1.6
+        order.addItem(Beer("Glacial",5)) //0.1 = 0.5
+        order.addItem(Water("Bem Barato",5)) // 0.0
         val total = order.getTotal()
         val expected = 20.1
 

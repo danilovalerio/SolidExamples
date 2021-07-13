@@ -22,7 +22,6 @@ class Order() {
     fun getTaxes(): Double {
         var taxes = 0.0
         for (item in this.listItem) {
-            //Todo: remover essa responsabilidade de Order
             taxes += item.calculateTaxes()
         }
         return taxes

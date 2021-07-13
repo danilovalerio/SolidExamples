@@ -1,19 +1,12 @@
-data class Item(
+abstract class Item(
     val category: String,
     val brand: String,
-    val price: Int
+    open val price: Int
 ) {
 
     fun calculateTaxes(): Double {
-        var taxes = 0.0
-        if (this.category == "Cigar") {
-            taxes += this.price * 0.2
-        }
-
-        if (this.category == "Beer") {
-            taxes += this.price * 0.1
-        }
-
-        return taxes
+        return this.price * this.getTax()
     }
+
+    abstract fun getTax(): Double
 }
