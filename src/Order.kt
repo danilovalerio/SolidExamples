@@ -34,7 +34,7 @@ class Order() {
     }
 
     fun getTotal(): Double {
-        return getSubtotal()+getTaxes()
+        return getSubtotal() + getTaxes()
     }
 
 }
