@@ -28,7 +28,6 @@ class OrderTest {
         val expected = 18
 
         assertEquals(expected, subtotal)
-
     }
 
     @Test
@@ -41,7 +40,6 @@ class OrderTest {
         val expected = 2.1
 
         assertEquals(expected, impostos)
-
     }
 
     @Test
