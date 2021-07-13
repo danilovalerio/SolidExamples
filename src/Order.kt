@@ -23,13 +23,7 @@ class Order() {
         var taxes = 0.0
         for (item in this.listItem) {
             //Todo: remover essa responsabilidade de Order
-            if (item.name == "Cigar") {
-                taxes += item.price * 0.2
-            }
-
-            if (item.name == "Beer") {
-                taxes += item.price * 0.1
-            }
+            taxes += item.calculateTaxes()
         }
         return taxes
     }
