@@ -19,4 +19,18 @@ class Order() {
         return total
     }
 
+    fun getTaxes(): Double {
+        var taxes = 0.0
+        for (item in this.listItem) {
+            if (item.name == "Cigar") {
+                taxes += item.price * 0.2
+            }
+
+            if (item.name == "Beer") {
+                taxes += item.price * 0.1
+            }
+        }
+        return taxes
+    }
+
 }
