@@ -41,4 +41,16 @@ class OrderTest {
         assertEquals(expected, impostos)
 
     }
+
+    @Test
+    fun `Deve calcular o total do pedido`() {
+        val order = Order()
+        order.addItem(Item("Cigar", "Eight", 8)) //0.2 = 1.6
+        order.addItem(Item("Beer", "Glacial", 5)) //0.1 = 0.5
+        order.addItem(Item("Water", "Bem Barato", 5)) // 0.0
+        val total = order.getTotal()
+        val expected = 20.1
+
+        assertEquals(expected, total)
+    }
 }
